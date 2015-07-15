@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   respond_to :json	
   def index
-  	respond_with(@news = News.all)
+  	token = request.headers['Authorization'].to_s.split(' ').last
+  	respond_with token
   end
 end

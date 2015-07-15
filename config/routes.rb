@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :news, only: [:index], defaults: { format: 'json' }
+  resources :news, only: [:index], defaults: { format: 'json' } 
   get "/auth/:provider/callback" => "sessions#create"
   get "signout" => "sessions#destroy", as: 'signout'
   root 'sessions#index'
